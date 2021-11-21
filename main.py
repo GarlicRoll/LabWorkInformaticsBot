@@ -6,10 +6,11 @@ import compiler, decompiler
 def init_bot(): # инициализация бота
     print("Bot_init")
     
+    global bot
     telegram_token = os.environ.get('TOKEN')
+    bot = telebot.TeleBot(telegram_token)
     '''
     # для лоакального тестирования
-    global bot
     bot = telebot.TeleBot("")
     '''
 
