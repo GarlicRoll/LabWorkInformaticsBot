@@ -3,10 +3,45 @@ import telebot
 import os
 import time
 
-import compiler, decompiler
+#import compiler, decompiler
+#from lab_work_informatics_bot.fib import ten_to_fib
 #from eight_to_ten import eight_to_ten
 #from morze import morse
 #from three_to_eight import three_to_eight
+
+def fibonacci(n):
+    fib = []
+    fib.append(1)
+    fib.append(1)
+    [fib.append(fib[k - 1] + fib[k - 2]) for k in range(2, n)]
+    return fib
+
+def ten_to_fib(n):
+    try:
+        i=0
+        sum = 0
+        dec=[]
+        ans = ""
+        fib = fibonacci(i + 1)
+        while(fib[-1]<n):
+            fib=[]
+            fib = fibonacci(i+1)
+            i+=1
+        for i in fib[::-1]:
+            sum+=i
+            if(sum>n):
+                sum-=i
+                dec.append(0)
+            elif(sum<=n):
+                dec.append(1)
+                continue
+        for i in dec:
+            s = str(i)
+            ans+=s
+    except TypeError:
+        return '', 'u10-fib_err'
+    return ans, 0
+
 
 def eight_to_ten(s):
     ans=0
@@ -71,6 +106,34 @@ def three_to_eight(s):
         return '', 'u3-8_err'
     return st,0
 
+def compiler(n):
+    text = "0) " + str(n) + "\n" # full steps of the compiling
+    n, err = morse(n)
+    if err:
+        print(f'Found error: {err}')
+        return(f'Found error: {err}')
+    else:
+        text += "1) " + str(n) + " (from symbols to three/morze)\n"
+        n, err = three_to_eight(n)
+        if err:
+            print(f'Found error: {err}')
+            return(f'Found error: {err}')
+        else:
+            text += "2) " + str(n) + " (from three/morze to eight)\n"
+            n, err = eight_to_ten(n)
+            if err:
+                print(f'Found error: {err}')
+                return(f'Found error: {err}')
+            else:
+                text += "3) " + str(n) + " (from eight to ten)\n"
+                n, err = ten_to_fib(n)
+                if err:
+                    print(f'Found error: {err}')
+                    return(f'Found error: {err}')
+                else:
+                    text += "4) " + str(n) + " (from ten to fibonacci)"
+                    print(text)
+                    return(n)
 
 def level_1():
     global password
