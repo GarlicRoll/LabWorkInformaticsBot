@@ -49,7 +49,7 @@ def init_bot(): # инициализация бота
     
     telegram_token = os.environ.get('TOKEN')
     bot = telebot.TeleBot(telegram_token)
-    bot.send_message("@anekdotibminus", "TEST")
+    bot.send_message("@ToastWithGarlic", "TEST")
     '''
     
     # для локального тестирования
