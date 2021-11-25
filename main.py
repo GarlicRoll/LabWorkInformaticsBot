@@ -81,12 +81,6 @@ def morse(n):
     return '2' + res[::-1] + '2', 0
 
 
-if __name__ == '__main__':
-    code, error = morse(input())
-    if not error:
-        print(code)
-    else:
-        print(f'Error code: {error}')
 
 def three_to_eight(s):
     if len(s) == 0:
