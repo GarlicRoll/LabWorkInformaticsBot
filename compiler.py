@@ -32,7 +32,7 @@ def main(n):
                 else:
                     text += "4) " + str(n) + " (from ten to fibonacci)"
                     print(text)
-                    return(text)
+                    return(n)
 
 if __name__ == '__main__':
-    main("20000")
+    main("Hi")

@@ -30,7 +30,7 @@ def main(n):
                 else:
                     text += "4) " + "".join(n) + " (from three/morze to symbols)"
                     print(text)
-                    return text
+                    return n
 
 
 if __name__ == '__main__':

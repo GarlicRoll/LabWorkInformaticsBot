@@ -49,8 +49,9 @@ def init_bot(): # инициализация бота
     
     telegram_token = os.environ.get('TOKEN')
     bot = telebot.TeleBot(telegram_token)
+    
     '''
-
+    
     # для локального тестирования
     bot = telebot.TeleBot("")
     '''
