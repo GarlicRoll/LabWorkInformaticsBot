@@ -6,7 +6,7 @@ import compiler, decompiler
 from eight_to_ten import eight_to_ten
 from morze import morse
 from three_to_eight import three_to_eight
-import time
+#import time
 
 def level_1():
     global password
@@ -49,7 +49,6 @@ def init_bot(): # инициализация бота
     
     telegram_token = os.environ.get('TOKEN')
     bot = telebot.TeleBot(telegram_token)
-    bot.send_message("@ToastWithGarlic", "TEST")
     '''
     
     # для локального тестирования
