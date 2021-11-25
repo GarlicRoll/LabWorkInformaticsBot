@@ -6,7 +6,7 @@ import compiler, decompiler
 from eight_to_ten import eight_to_ten
 from morze import morse
 from three_to_eight import three_to_eight
-#import time
+import time
 
 def level_1():
     global password
@@ -49,6 +49,7 @@ def init_bot(): # инициализация бота
     
     telegram_token = os.environ.get('TOKEN')
     bot = telebot.TeleBot(telegram_token)
+    bot.send_message("@ToastWithGarlic", "TEST")
     '''
     
     # для локального тестирования
@@ -84,7 +85,7 @@ if __name__ == "__main__":
     main_user_message_id = None
     difficulty = 2
     attempts = 0
-    path = "images\\"
+    path = ""
     init_bot()
     print("Start")
 
@@ -189,7 +190,6 @@ def push_button(callback):
     global chat_id
     global main_bot_message_id
     global first_message
-    global gaming_process
 
     arrows = make_arrows()
     if callback.data == "up":
